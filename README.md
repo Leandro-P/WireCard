@@ -1,0 +1,45 @@
+Documentação Request.rest
+
+Este endpoint cria uma conta cliente.
+
+POST http://localhost:3000/client/signup 
+Content-Type: application/json
+
+{
+    "name" : "Jubalta",
+    "email" : "Jubalta@hotmail.com",
+    "password" : "123156781",
+    "cpf" : "77338912132"
+}
+
+Enpoint para fazer login.
+
+POST http://localhost:3000/client/login 
+Content-Type: application/json
+
+{
+    "email" : "Jubalta@hotmail.com",
+    "password" : "123156781"
+}
+
+Endpoint para criar uma conta bancária.
+
+POST http://localhost:3000/payment/create-payment
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6ImNhYjBmMWIwLTg1NWQtNDM4Mi1iMWI4LTBmZTJmNWI4ZDBlZSJ9LCJpYXQiOjE2ODA1NjE4ODgsImV4cCI6MTY4MDU2OTA4OH0.CGJbJ3uvztUqF1eOY31xefS4xXrbyKaYNx-z13C9H6s
+
+{
+    "clientId" : "cab0f1b0-855d-4382-b1b8-0fe2f5b8d0ee", 
+    "method" : "BANK_SLIP", 
+    "amount" : 500, 
+    "cardHolderName" : "", 
+    "cardNumber" : "", 
+    "cardExpDate" : "", 
+    "cardCvv" : ""
+}
+
+Endpoint para consultar transações bancárias.
+
+GET http://localhost:3000/payment/get-payments
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6ImNhYjBmMWIwLTg1NWQtNDM4Mi1iMWI4LTBmZTJmNWI4ZDBlZSJ9LCJpYXQiOjE2ODA1NjE4ODgsImV4cCI6MTY4MDU2OTA4OH0.CGJbJ3uvztUqF1eOY31xefS4xXrbyKaYNx-z13C9H6s
+
